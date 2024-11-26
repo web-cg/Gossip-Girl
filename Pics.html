@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bild-Galerie</title>
+  <link rel="stylesheet" href="css/pics.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar" id="navbar">
+    <a class="navbtn" href="index.html">Home</a>
+    <a class="navbtn" href="Photo-Gallery.html">Gosspip</a>
+    <a class="navbtn" href="Video-Gallery.html">Posts</a>
+    <a class="navbtn" href="Pics.html">Pics</a>
+    <a class="navbtn" href="Parties.html">Parties</a>
+    <a class="navbtn" href="Links.html">Links</a>
+    <a class="navbtn" href="More.html">More</a>
+  </div>
+
+  <h1>Bild-Galerie erstellen</h1>
+  <form id="imageForm">
+    <div class="file-upload">
+      <input type="file" id="imageInput" accept="image/*" multiple required>
+      <p id="fileNames">Keine Datei ausgewählt</p>
+    </div>
+    <button type="submit">Bilder hochladen</button>
+  </form>
+
+  <div id="imageGallery" class="gallery"></div>
+
+  <!-- Modal für vergrößerte Bilder -->
+  <div id="imageModal" class="modal hidden">
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Vergrößertes Bild">
+      <button id="closeModal" class="danger">Schließen</button>
+    </div>
+  </div>
+
+  <script src="js/pics.js"></script>
+</body>
+</html>
