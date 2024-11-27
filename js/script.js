@@ -44,7 +44,10 @@ contentForm.addEventListener('submit', e => {
   createBox({ title, text, image, date });
   saveBox({ title, text, image, date });
 
-  contentForm.reset();
+  // Input-Felder leeren
+  document.getElementById('titleInput').value = '';
+  document.getElementById('textInput').value = '';
+  imageInput.value = '';
   imagePreview.style.display = 'none';
   removeImage.style.display = 'none';
 });
@@ -64,8 +67,8 @@ function createBox({ title, text, image, date }) {
 
   // Klick auf Bild, um es zu vergrößern
   imageElem.addEventListener('click', () => {
-    modalImage.src = image;  // Bild ins Modal setzen
-    imageModal.classList.remove('hidden');  // Modal anzeigen
+    modalImage.src = image; // Bild ins Modal setzen
+    imageModal.classList.remove('hidden'); // Modal anzeigen
   });
 
   const textElem = document.createElement('div');
@@ -114,7 +117,7 @@ function saveBox(data) {
 
 // Event Listener zum Schließen des Modals
 closeModal.addEventListener('click', () => {
-  imageModal.classList.add('hidden');  // Modal schließen
+  imageModal.classList.add('hidden'); // Modal schließen
 });
 
 // Initialisieren

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bild-Galerie</title>
+  <title>Gallery</title>
   <link rel="stylesheet" href="css/pics.css">
 </head>
 <body>
@@ -19,13 +19,13 @@
     <a class="navbtn" href="More.html">More</a>
   </div>
 
-  <h1>Bild-Galerie erstellen</h1>
+  <h1>Gallery</h1>
   <form id="imageForm">
     <div class="file-upload">
       <input type="file" id="imageInput" accept="image/*" multiple required>
-      <p id="fileNames">Keine Datei ausgewählt</p>
+      <p id="fileNames">No file chosen</p>
     </div>
-    <button type="submit">Bilder hochladen</button>
+    <button type="submit">Upload pics</button>
   </form>
 
   <div id="imageGallery" class="gallery"></div>
@@ -34,7 +34,7 @@
   <div id="imageModal" class="modal hidden">
     <div class="modal-content">
       <img id="modalImage" src="" alt="Vergrößertes Bild">
-      <button id="closeModal" class="danger">Schließen</button>
+      <button id="closeModal" class="danger">Close</button>
     </div>
   </div>
 

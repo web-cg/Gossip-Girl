@@ -5,6 +5,19 @@ body {
   margin: 20px auto;
   padding: 10px;
   background-color: #b7588b;
+
+  /* Scrollbars komplett verstecken */
+  overflow: hidden; /* Keine sichtbare Scrollbar */
+  scrollbar-width: none; /* Verstecke Scrollbar in Firefox */
+  -ms-overflow-style: none; /* Verstecke Scrollbar in IE */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Verstecke Scrollbar in Chrome, Safari */
+}
+
+html {
+  overflow-y: scroll; /* Erlaubt Scrollen ohne sichtbare Scrollbars */
 }
 
 h1 {
@@ -174,29 +187,72 @@ button.danger:hover {
   background-color: darkred;
 }
 
+/* Navbar */
+.navbar {
+  background-color: #ab3976;
+  color: #fff;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
+.navbtn {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 26px;
+  padding: 10px;
+  flex-shrink: 0;
+}
 
+.navbtn:hover {
+  background-color: #b7588b;
+  padding: 10px;
+}
 
-  /* Navbar */
+/* Scroll-Indikator */
+.scroll-indicator {
+  position: fixed;
+  right: 10px;
+  top: 0;
+  width: 5px;
+  background-color: black;
+  border-radius: 5px;
+  height: 5%; /* Dynamisch angepasst durch JavaScript */
+  z-index: 50;
+  transition: height 0.2s ease-in-out; /* Für weiche Bewegung */
+}
+
+/* Mobile-Friendly Anpassungen */
+@media (max-width: 600px) {
+  body {
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
   .navbar {
-      background-color: #ab3976;
-      color: #fff;
-      height: 50px;
-      width: auto;
-      align-content: center;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-    
-    .navbtn {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      padding: 10px;
-    }
-    
-    .navbtn:hover {
-      background-color: #b7588b;
-      padding: 10px;
-    }
+    justify-content: flex-start;
+    overflow-x: scroll; /* Horizontal scroll for smaller screens */
+  }
+
+  .content-box {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .content-title {
+    font-size: 16px;
+  }
+
+  .content-text {
+    font-size: 14px;
+  }
+
+  .content-image {
+    width: 100%;
+  }
+}

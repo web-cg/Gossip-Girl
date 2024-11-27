@@ -8,7 +8,7 @@
 </head>
 <body>
 
-      <!-- Navbar -->
+  <!-- Navbar -->
   <div class="navbar" id="navbar">
     <a class="navbtn" href="index.html">Home</a>
     <a class="navbtn" href="Gossip.html">Gossip</a>
@@ -19,5 +19,23 @@
     <a class="navbtn" href="More.html">More</a>
   </div>
 
+  <!-- Schwarzer Scroll-Indikator -->
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+
 </body>
+<script>
+  // Scroll-Indikator Dynamik
+  const scrollIndicator = document.getElementById('scrollIndicator');
+
+function updateScrollIndicator() {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+  scrollIndicator.style.height = `${Math.max(5, scrollPercentage)}%`;
+}
+
+window.addEventListener('scroll', updateScrollIndicator);
+window.addEventListener('resize', updateScrollIndicator);
+updateScrollIndicator(); // Initialer Aufruf
+
+</script>
 </html>
